@@ -1,11 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/jsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@": ["./src"],
-      "@/*": ["./src/*"]
-    }
+    "baseUrl": "."
   },
   "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]
