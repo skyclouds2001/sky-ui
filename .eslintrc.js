@@ -8,7 +8,7 @@ module.exports = {
     'shared-node-browser': true,
     worker: true,
   },
-  extends: ['standard-with-typescript', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:n/recommended', 'plugin:promise/recommended', 'plugin:import/recommended', 'plugin:import/typescript', 'plugin:jsdoc/recommended', 'plugin:jsx-a11y/recommended', 'plugin:prettier/recommended'],
+  extends: ['standard-with-typescript', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:n/recommended', 'plugin:promise/recommended', 'plugin:import/recommended', 'plugin:import/typescript', 'plugin:prettier/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -46,10 +46,6 @@ module.exports = {
     },
   },
   overrides: [
-    {
-      files: ['**/*.{test,spec}.{js,jsx,ts,tsx}'],
-      extends: ['plugin:vitest/recommended'],
-    },
     {
       files: ['*.ts', '*.tsx'],
       rules: {
