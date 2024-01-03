@@ -49,13 +49,13 @@ export class SkyButton extends LitElement {
     return html`
       <button
         class="sky-button ${classMap({
-          [`sky-button-${this.type}`]: this.type != null,
-          'sky-button-round': this.round,
-          'sky-button-circle': this.circle,
-          'sky-button-disabled': this.disabled,
-          'sky-button-plain': this.plain,
-          'sky-button-link': this.link,
-          'sky-button-text': this.text,
+          [`sky-button--${this.type}`]: this.type != null,
+          'sky-button--round': this.round,
+          'sky-button--circle': this.circle,
+          'sky-button--disabled': this.disabled,
+          'sky-button--plain': this.plain,
+          'sky-button--link': this.link,
+          'sky-button--text': this.text,
         })}"
         ?disabled=${this.disabled}
         aria-disabled=${this.disabled || nothing}
@@ -123,7 +123,7 @@ export class SkyButton extends LitElement {
       outline-offset: 1px;
     }
 
-    .sky-button-primary {
+    .sky-button--primary {
       --sky-button-text-color: #ffffff;
       --sky-button-bg-color: #409eff;
       --sky-button-border-color: #409eff;
@@ -140,7 +140,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-link-text-color: #a0cfff;
     }
 
-    .sky-button-success {
+    .sky-button--success {
       --sky-button-text-color: #ffffff;
       --sky-button-bg-color: #67c23a;
       --sky-button-border-color: #67c23a;
@@ -157,7 +157,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-link-text-color: #b3e19d;
     }
 
-    .sky-button-warning {
+    .sky-button--warning {
       --sky-button-text-color: #ffffff;
       --sky-button-bg-color: #e6a23c;
       --sky-button-border-color: #e6a23c;
@@ -174,7 +174,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-link-text-color: #f3d19e;
     }
 
-    .sky-button-danger {
+    .sky-button--danger {
       --sky-button-text-color: #ffffff;
       --sky-button-bg-color: #f56c6c;
       --sky-button-border-color: #f56c6c;
@@ -191,7 +191,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-link-text-color: #fab6b6;
     }
 
-    .sky-button-info {
+    .sky-button--info {
       --sky-button-text-color: #ffffff;
       --sky-button-bg-color: #909399;
       --sky-button-border-color: #909399;
@@ -208,54 +208,54 @@ export class SkyButton extends LitElement {
       --sky-button-hover-link-text-color: #c8c9cc;
     }
 
-    .sky-button.sky-button-disabled:where(*, :hover, :focus) {
+    .sky-button.sky-button--disabled:where(*, :hover, :focus) {
       cursor: not-allowed;
       color: var(--sky-button-disabled-text-color);
       background-color: var(--sky-button-disabled-bg-color);
       border-color: var(--sky-button-disabled-border-color);
     }
 
-    .sky-button.sky-button-round {
+    .sky-button.sky-button--round {
       border-radius: 1em;
     }
 
-    .sky-button.sky-button-circle {
+    .sky-button.sky-button--circle {
       border-radius: 50%;
       width: 2em;
     }
 
-    .sky-button.sky-button-plain {
+    .sky-button.sky-button--plain {
       --sky-button-hover-text-color: #409eff;
       --sky-button-hover-bg-color: #ffffff;
       --sky-button-hover-border-color: #409eff;
     }
 
-    .sky-button.sky-button-link {
+    .sky-button.sky-button--link {
       background-color: transparent;
       border-color: transparent;
     }
 
-    .sky-button.sky-button-link:hover {
+    .sky-button.sky-button--link:hover {
       color: var(--sky-button-hover-link-text-color);
     }
 
-    .sky-button-text {
+    .sky-button--text {
       color: var(--sky-button-text-color);
       background-color: transparent;
       border-width: 0;
       border-color: transparent;
     }
 
-    .sky-button.sky-button-text.sky-button-disabled {
+    .sky-button.sky-button--text.sky-button--disabled {
       background-color: transparent;
       border-color: transparent;
     }
 
-    .sky-button.sky-button-text:not(.sky-button-disabled):where(:hover, :focus, :active) {
+    .sky-button.sky-button--text:not(.sky-button--disabled):where(:hover, :focus, :active) {
       background-color: #f5f7fa;
     }
 
-    .sky-button-primary:is(.sky-button-plain, .sky-button-link, .sky-button-text) {
+    .sky-button--primary:is(.sky-button--plain, .sky-button--link, .sky-button--text) {
       --sky-button-text-color: #409eff;
       --sky-button-bg-color: #ecf5ff;
       --sky-button-border-color: #a0cfff;
@@ -264,7 +264,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-border-color: #409eff;
     }
 
-    .sky-button-success:is(.sky-button-plain, .sky-button-link, .sky-button-text) {
+    .sky-button--success:is(.sky-button--plain, .sky-button--link, .sky-button--text) {
       --sky-button-text-color: #67c23a;
       --sky-button-bg-color: #f0f9eb;
       --sky-button-border-color: #b3e19d;
@@ -273,7 +273,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-border-color: #67c23a;
     }
 
-    .sky-button-warning:is(.sky-button-plain, .sky-button-link, .sky-button-text) {
+    .sky-button--warning:is(.sky-button--plain, .sky-button--link, .sky-button--text) {
       --sky-button-text-color: #e6a23c;
       --sky-button-bg-color: #fdf6ec;
       --sky-button-border-color: #f3d19e;
@@ -282,7 +282,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-border-color: #e6a23c;
     }
 
-    .sky-button-danger:is(.sky-button-plain, .sky-button-link, .sky-button-text) {
+    .sky-button--danger:is(.sky-button--plain, .sky-button--link, .sky-button--text) {
       --sky-button-text-color: #f56c6c;
       --sky-button-bg-color: #fef0f0;
       --sky-button-border-color: #fab6b6;
@@ -291,7 +291,7 @@ export class SkyButton extends LitElement {
       --sky-button-hover-border-color: #f56c6c;
     }
 
-    .sky-button-info:is(.sky-button-plain, .sky-button-link, .sky-button-text) {
+    .sky-button--info:is(.sky-button--plain, .sky-button--link, .sky-button--text) {
       --sky-button-text-color: #909399;
       --sky-button-bg-color: #f4f4f5;
       --sky-button-border-color: #c8c9cc;
@@ -300,31 +300,31 @@ export class SkyButton extends LitElement {
       --sky-button-hover-border-color: #909399;
     }
 
-    .sky-button-primary:is(.sky-button-plain, .sky-button-link, .sky-button-text).sky-button-disabled:where(*, :hover, :focus) {
+    .sky-button--primary:is(.sky-button--plain, .sky-button--link, .sky-button--text).sky-button--disabled:where(*, :hover, :focus) {
       --sky-button-disabled-text-color: #a0cfff;
       --sky-button-disabled-bg-color: #ecf5ff;
       --sky-button-disabled-border-color: #d9ecff;
     }
 
-    .sky-button-success:is(.sky-button-plain, .sky-button-link, .sky-button-text).sky-button-disabled:where(*, :hover, :focus) {
+    .sky-button--success:is(.sky-button--plain, .sky-button--link, .sky-button--text).sky-button--disabled:where(*, :hover, :focus) {
       --sky-button-disabled-text-color: #b3e19d;
       --sky-button-disabled-bg-color: #f0f9eb;
       --sky-button-disabled-border-color: #e1f3d8;
     }
 
-    .sky-button-warning:is(.sky-button-plain, .sky-button-link, .sky-button-text).sky-button-disabled:where(*, :hover, :focus) {
+    .sky-button--warning:is(.sky-button--plain, .sky-button--link, .sky-button--text).sky-button--disabled:where(*, :hover, :focus) {
       --sky-button-disabled-text-color: #f3d19e;
       --sky-button-disabled-bg-color: #fdf6ec;
       --sky-button-disabled-border-color: #faecd8;
     }
 
-    .sky-button-danger:is(.sky-button-plain, .sky-button-link, .sky-button-text).sky-button-disabled:where(*, :hover, :focus) {
+    .sky-button--danger:is(.sky-button--plain, .sky-button--link, .sky-button--text).sky-button--disabled:where(*, :hover, :focus) {
       --sky-button-disabled-text-color: #fab6b6;
       --sky-button-disabled-bg-color: #fef0f0;
       --sky-button-disabled-border-color: #fde2e2;
     }
 
-    .sky-button-info:is(.sky-button-plain, .sky-button-link, .sky-button-text).sky-button-disabled:where(*, :hover, :focus) {
+    .sky-button--info:is(.sky-button--plain, .sky-button--link, .sky-button--text).sky-button--disabled:where(*, :hover, :focus) {
       --sky-button-disabled-text-color: #c8c9cc;
       --sky-button-disabled-bg-color: #f4f4f5;
       --sky-button-disabled-border-color: #e9e9eb;
