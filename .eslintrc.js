@@ -25,14 +25,7 @@ module.exports = {
   rules: {
     'n/no-missing-import': 'off',
     'n/no-missing-require': 'off',
-    'import/no-unresolved': [
-      'error',
-      {
-        commonjs: true,
-        amd: true,
-        ignore: ['^@'],
-      },
-    ],
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
   settings: {
     'import/parsers': {
