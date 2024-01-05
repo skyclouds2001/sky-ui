@@ -13,8 +13,19 @@ export class SkyDivider extends LitElement {
   })
   'border-style': 'none' | 'solid' | 'hidden' | 'dashed' | 'dotted' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' = 'solid'
 
+  @property({
+    type: String,
+  })
+  'content-position': 'left' | 'right' | 'center' = 'center'
+
   protected render() {
-    return html`<div class="sky-divider sky-divider--${this.direction}" style="border-style: ${this['border-style']}" role="separator"></div>`
+    return html`
+      <div class="sky-divider sky-divider--${this.direction}" style="border-style: ${this['border-style']}" role="separator">
+        <span class="sky-divider--content sky-divider--${this['content-position']}">
+          <slot></slot>
+        </span>
+      </div>
+    `
   }
 
   static styles = css`
@@ -28,17 +39,40 @@ export class SkyDivider extends LitElement {
       display: block;
       height: 1px;
       width: 100%;
-      border-top-width: 1px;
-      border-top-color: #dcdfe6;
+      margin: 24px 0;
+      border-top: 1px solid #dcdfe6;
     }
 
     .sky-divider--vertical {
       display: inline-block;
       height: 1em;
       width: 1px;
-      border-left-width: 1px;
-      border-left-color: #dcdfe6;
+      margin: 0 8px;
+      border-left: 1px solid #dcdfe6;
       vertical-align: middle;
+    }
+
+    .sky-divider--content {
+      position: absolute;
+      padding: 0 20px;
+      background-color: #ffffff;
+      color: #303133;
+      font-size: 14px;
+    }
+
+    .sky-divider--left {
+      left: 20px;
+      transform: translate(0, -50%);
+    }
+
+    .sky-divider--center {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .sky-divider--right {
+      right: 20px;
+      transform: translate(0, -50%);
     }
   `
 }

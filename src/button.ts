@@ -43,6 +43,11 @@ export class SkyButton extends LitElement {
   @property({
     type: String,
   })
+  size: 'default' | 'large' | 'small' = 'default'
+
+  @property({
+    type: String,
+  })
   'native-type'?: 'button' | 'submit' | 'reset'
 
   protected render() {
@@ -56,9 +61,10 @@ export class SkyButton extends LitElement {
           'sky-button--plain': this.plain,
           'sky-button--link': this.link,
           'sky-button--text': this.text,
+          [`sky-button--${this.size}`]: this.size != null,
         })}"
         ?disabled=${this.disabled}
-        aria-disabled=${this.disabled || nothing}
+        aria-disabled=${(this.disabled ? 'true' : nothing) as 'true' | 'false'}
         type=${ifDefined(this['native-type'])}
       >
         <slot></slot>
@@ -88,9 +94,10 @@ export class SkyButton extends LitElement {
       display: inline-flex;
       justify-content: center;
       align-items: center;
+      padding: 0 1em;
       color: var(--sky-button-text-color);
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1;
       white-space: nowrap;
       text-align: center;
@@ -99,7 +106,7 @@ export class SkyButton extends LitElement {
       box-sizing: border-box;
       background-color: var(--sky-button-bg-color);
       border: 1px solid var(--sky-button-border-color);
-      border-radius: 4px;
+      border-radius: 0.25em;
       outline: none;
       cursor: pointer;
       user-select: none;
@@ -328,6 +335,14 @@ export class SkyButton extends LitElement {
       --sky-button-disabled-text-color: #c8c9cc;
       --sky-button-disabled-bg-color: #f4f4f5;
       --sky-button-disabled-border-color: #e9e9eb;
+    }
+
+    .sky-button.sky-button--large {
+      font-size: 16px;
+    }
+
+    .sky-button.sky-button--small {
+      font-size: 12px;
     }
   `
 }
