@@ -21,7 +21,7 @@ export class SkyDivider extends LitElement {
   protected render() {
     return html`
       <div class="sky-divider sky-divider--${this.direction}" style="border-style: ${this['border-style']}" role="separator">
-        ${this.innerHTML.trim().length > 0
+        ${this.childNodes.length > 0
           ? html`
               <span class="sky-divider--content sky-divider--${this['content-position']}">
                 <slot></slot>
