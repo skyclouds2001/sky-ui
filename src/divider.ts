@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 @customElement('sky-divider')
@@ -21,9 +21,13 @@ export class SkyDivider extends LitElement {
   protected render() {
     return html`
       <div class="sky-divider sky-divider--${this.direction}" style="border-style: ${this['border-style']}" role="separator">
-        <span class="sky-divider--content sky-divider--${this['content-position']}">
-          <slot></slot>
-        </span>
+        ${this.innerHTML.trim().length > 0
+          ? html`
+              <span class="sky-divider--content sky-divider--${this['content-position']}">
+                <slot></slot>
+              </span>
+            `
+          : nothing}
       </div>
     `
   }
