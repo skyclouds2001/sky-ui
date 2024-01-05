@@ -1,4 +1,5 @@
 module.exports = {
+  printWidth: 1000,
   arrowParens: 'always',
   bracketSameLine: false,
   bracketSpacing: true,
