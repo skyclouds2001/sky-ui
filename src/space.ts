@@ -20,8 +20,6 @@ export class SkySpace extends LitElement {
   size: number = 12
 
   protected render() {
-    // const size = this.childNodes.length
-    // const uuids = new Array(size).fill(0).map(() => crypto.randomUUID())
     return html`
       <div
         class="sky-space sky-space--${this.direction}"
