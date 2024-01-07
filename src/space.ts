@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 @customElement('sky-space')
@@ -20,6 +21,12 @@ export class SkySpace extends LitElement {
   size: number = 12
 
   protected render() {
+    const ids = Array(this.children.length)
+      .fill(0)
+      .map(() => window.crypto.randomUUID())
+    Array.from(this.children).forEach((el, i) => {
+      el.setAttribute('slot', ids[i])
+    })
     return html`
       <div
         class="sky-space sky-space--${this.direction}"
@@ -28,7 +35,11 @@ export class SkySpace extends LitElement {
           gap: `${this.size}px`,
         })}
       >
-        ${Array.from(this.childNodes).map((el) => html`<div class="sky-space--item">${el}</div>`)}
+        ${repeat(
+          ids,
+          (id) => id,
+          (id) => html`<slot name=${id}></slot>`
+        )}
       </div>
     `
   }
