@@ -64,7 +64,7 @@ export class SkyButton extends LitElement {
           [`sky-button--${this.size}`]: this.size != null,
         })}"
         ?disabled=${this.disabled}
-        aria-disabled=${(this.disabled ? 'true' : nothing) as 'true' | 'false'}
+        aria-disabled=${(this.disabled ? 'true' : nothing) as 'true'}
         type=${ifDefined(this['native-type'])}
       >
         <slot></slot>
