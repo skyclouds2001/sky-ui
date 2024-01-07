@@ -62,3 +62,9 @@ export class SkySpace extends LitElement {
     }
   `
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'sky-space': SkySpace
+  }
+}
