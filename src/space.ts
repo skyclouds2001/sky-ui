@@ -38,7 +38,11 @@ export class SkySpace extends LitElement {
         ${repeat(
           ids,
           (id) => id,
-          (id) => html`<slot name=${id}></slot>`
+          (id) => html`
+            <div class="sky-space--item">
+              <slot name=${id}></slot>
+            </div>
+          `
         )}
       </div>
     `
@@ -51,6 +55,10 @@ export class SkySpace extends LitElement {
 
     .sky-space--item {
       display: flex;
+    }
+
+    .sky-space--item > * {
+      flex: 1;
     }
 
     .sky-space--horizontal {
