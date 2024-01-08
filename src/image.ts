@@ -9,7 +9,7 @@ export class SkyImage extends LitElement {
   @property({
     type: String,
   })
-  src: string = ''
+  src?: string
 
   @property({
     type: Number,
@@ -82,7 +82,7 @@ export class SkyImage extends LitElement {
             'object-fit': this.fit,
             opacity: this.isLoading ? 0 : 1,
           })}
-          src=${this.src}
+          src=${ifDefined(this.src)}
           width=${ifDefined(this.width)}
           height=${ifDefined(this.height)}
           alt=${ifDefined(this.alt)}
