@@ -107,6 +107,12 @@
   <sky-button type="info" text disabled>button</sky-button>
 </div>
 
+## Block
+
+<div>
+  <sky-button block>button</sky-button>
+</div>
+
 ## Size
 
 <div>

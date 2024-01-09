@@ -50,6 +50,11 @@ export class SkyButton extends LitElement {
   })
   'native-type'?: 'button' | 'submit' | 'reset'
 
+  @property({
+    type: Boolean,
+  })
+  block: boolean = false
+
   protected render() {
     return html`
       <button
@@ -62,6 +67,7 @@ export class SkyButton extends LitElement {
           'sky-button--link': this.link,
           'sky-button--text': this.text,
           [`sky-button--${this.size}`]: this.size != null,
+          'sky-button--block': this.block,
         })}"
         ?disabled=${this.disabled}
         aria-disabled=${(this.disabled ? 'true' : nothing) as 'true'}
@@ -345,6 +351,10 @@ export class SkyButton extends LitElement {
 
     .sky-button.sky-button--small {
       font-size: 12px;
+    }
+
+    .sky-button.sky-button--block {
+      width: 100%;
     }
   `
 }
