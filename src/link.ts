@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 @customElement('sky-link')
 export class SkyLink extends LitElement {
@@ -24,6 +25,21 @@ export class SkyLink extends LitElement {
   })
   underline: boolean = false
 
+  @property({
+    type: String,
+  })
+  target?: '_self' | '_blank' | '_parent' | '_top'
+
+  @property({
+    type: String,
+  })
+  referrerpolicy?: 'no-referrer' | 'no-referrer-when-downgrade' | 'origin' | 'origin-when-cross-origin' | 'same-origin' | 'strict-origin' | 'strict-origin-when-cross-origin' | 'unsafe-url'
+
+  @property({
+    type: String,
+  })
+  download?: string
+
   protected render() {
     return html`
       <a
@@ -33,6 +49,9 @@ export class SkyLink extends LitElement {
           'sky-link--underline': this.underline && !this.disabled,
         })}"
         href=${this.href}
+        target=${ifDefined(this.target)}
+        referrerpolicy=${ifDefined(this.referrerpolicy)}
+        download=${ifDefined(this.download)}
       >
         <span class="sky-link--inner">
           <slot></slot>
