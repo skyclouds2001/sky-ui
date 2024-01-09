@@ -17,6 +17,11 @@ export class SkyLink extends LitElement {
   @property({
     type: Boolean,
   })
+  disabled: boolean = false
+
+  @property({
+    type: Boolean,
+  })
   underline: boolean = false
 
   protected render() {
@@ -24,7 +29,8 @@ export class SkyLink extends LitElement {
       <a
         class="sky-link ${classMap({
           [`sky-link--${this.type}`]: this.type != null,
-          'sky-link--underline': this.underline,
+          'sky-link--disabled': this.disabled,
+          'sky-link--underline': this.underline && !this.disabled,
         })}"
         href=${this.href}
       >
@@ -64,7 +70,12 @@ export class SkyLink extends LitElement {
       align-items: center;
     }
 
-    .sky-link:hover.sky-link--underline::after {
+    .sky-link.sky-link--disabled {
+      color: var(--sky-link-disabled-text-color);
+      cursor: not-allowed;
+    }
+
+    .sky-link.sky-link--underline:hover::after {
       content: '';
       position: absolute;
       left: 0;

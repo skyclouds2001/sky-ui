@@ -25,3 +25,14 @@
   <sky-link href="/" type="danger" underline>link</sky-link>
   <sky-link href="/" type="info" underline>link</sky-link>
 </div>
+
+## Disabled
+
+<div>
+  <sky-link href="/" underline disabled>link</sky-link>
+  <sky-link href="/" type="primary" underline disabled>link</sky-link>
+  <sky-link href="/" type="success" underline disabled>link</sky-link>
+  <sky-link href="/" type="warning" underline disabled>link</sky-link>
+  <sky-link href="/" type="danger" underline disabled>link</sky-link>
+  <sky-link href="/" type="info" underline disabled>link</sky-link>
+</div>
