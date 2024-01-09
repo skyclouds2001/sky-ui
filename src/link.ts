@@ -17,7 +17,7 @@ export class SkyLink extends LitElement {
   @property({
     type: Boolean,
   })
-  underline: boolean = true
+  underline: boolean = false
 
   protected render() {
     return html`
@@ -43,6 +43,7 @@ export class SkyLink extends LitElement {
     }
 
     .sky-link {
+      position: relative;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -66,7 +67,9 @@ export class SkyLink extends LitElement {
     .sky-link:hover.sky-link--underline::after {
       content: '';
       position: absolute;
-      inset: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       height: 0;
       border-bottom: 1px solid var(--sky-link-hover-text-color);
     }
