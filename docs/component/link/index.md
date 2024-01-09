@@ -36,3 +36,11 @@
   <sky-link href="/" type="danger" underline disabled>link</sky-link>
   <sky-link href="/" type="info" underline disabled>link</sky-link>
 </div>
+
+## Size
+
+<div>
+  <sky-link href="/" size="large">link</sky-link>
+  <sky-link href="/">link</sky-link>
+  <sky-link href="/" size="small">link</sky-link>
+</div>

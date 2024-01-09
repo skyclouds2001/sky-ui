@@ -28,6 +28,11 @@ export class SkyLink extends LitElement {
   @property({
     type: String,
   })
+  size?: 'large' | 'default' | 'small'
+
+  @property({
+    type: String,
+  })
   target?: '_self' | '_blank' | '_parent' | '_top'
 
   @property({
@@ -47,6 +52,7 @@ export class SkyLink extends LitElement {
           [`sky-link--${this.type}`]: this.type != null,
           'sky-link--disabled': this.disabled,
           'sky-link--underline': this.underline && !this.disabled,
+          [`sky-link--${this.size}`]: this.size === 'large' || this.size === 'small',
         })}"
         href=${this.href}
         target=${ifDefined(this.target)}
@@ -132,6 +138,14 @@ export class SkyLink extends LitElement {
       --sky-link-text-color: #909399;
       --sky-link-hover-text-color: #b1b3b8;
       --sky-link-disabled-text-color: #c8c9cc;
+    }
+
+    .sky-link--large {
+      font-size: 16px;
+    }
+
+    .sky-link--small {
+      font-size: 12px;
     }
   `
 }
