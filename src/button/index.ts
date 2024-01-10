@@ -81,22 +81,94 @@ export class SkyButton extends LitElement {
   }
 
   static styles = css`
-    :host {
-      --sky-button-font-size: 14px;
-      --sky-button-text-color: #606266;
-      --sky-button-bg-color: #ffffff;
-      --sky-button-border-color: #dcdfe6;
-      --sky-button-active-text-color: #409eff;
-      --sky-button-active-bg-color: #ecf5ff;
-      --sky-button-active-border-color: #409eff;
-      --sky-button-hover-text-color: #409eff;
-      --sky-button-hover-bg-color: #ecf5ff;
-      --sky-button-hover-border-color: #c6e2ff;
-      --sky-button-outline-color: #a0cfff;
-      --sky-button-disabled-text-color: #a8abb2;
-      --sky-button-disabled-bg-color: #ffffff;
-      --sky-button-disabled-border-color: #e4e7ed;
-      --sky-button-hover-link-text-color: #909399;
+    @property --sky-button-font-size {
+      syntax: '<length>';
+      inherits: true;
+      initial-value: 14px;
+    }
+
+    @property --sky-button-text-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #606266;
+    }
+
+    @property --sky-button-bg-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #ffffff;
+    }
+
+    @property --sky-button-border-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #dcdfe6;
+    }
+
+    @property --sky-button-active-text-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #409eff;
+    }
+
+    @property --sky-button-active-bg-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #ecf5ff;
+    }
+
+    @property --sky-button-active-border-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #409eff;
+    }
+
+    @property --sky-button-hover-text-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #409eff;
+    }
+
+    @property --sky-button-hover-bg-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #ecf5ff;
+    }
+
+    @property --sky-button-hover-border-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #c6e2ff;
+    }
+
+    @property --sky-button-outline-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #a0cfff;
+    }
+
+    @property --sky-button-disabled-text-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #a8abb2;
+    }
+
+    @property --sky-button-disabled-bg-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #ffffff;
+    }
+
+    @property --sky-button-disabled-border-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #e4e7ed;
+    }
+
+    @property --sky-button-hover-link-text-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #909399;
     }
 
     .sky-button {

@@ -44,9 +44,16 @@ export class SkyText extends LitElement {
   }
 
   static styles = css`
-    :host {
-      --sky-text-font-size: 14px;
-      --sky-text-text-color: #606266;
+    @property --sky-text-font-size {
+      syntax: '<length>';
+      inherits: true;
+      initial-value: 14px;
+    }
+
+    @property --sky-text-text-color {
+      syntax: '<color>';
+      inherits: true;
+      initial-value: #606266;
     }
 
     .sky-text {
