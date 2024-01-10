@@ -24,6 +24,10 @@ export default defineConfig({
             link: '/component/link/',
           },
           {
+            text: 'Text',
+            link: '/component/text/',
+          },
+          {
             text: 'Space',
             link: '/component/space/',
           },

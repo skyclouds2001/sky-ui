@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map'
+import { classMap } from 'lit/directives/class-map.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 @customElement('sky-text')
 export class SkyText extends LitElement {
@@ -14,13 +15,28 @@ export class SkyText extends LitElement {
   })
   size?: 'large' | 'default' | 'small'
 
+  @property({
+    type: Boolean,
+  })
+  truncated: boolean = false
+
+  @property({
+    type: Number,
+  })
+  'line-clamp'?: number
+
   protected render() {
     return html`
       <span
         class="sky-text ${classMap({
           [`sky-text--${this.type}`]: this.type != null,
-          [`sky-link--${this.size}`]: this.size === 'large' || this.size === 'small',
+          [`sky-text--${this.size}`]: this.size === 'large' || this.size === 'small',
+          'sky-text--ellipsis': this.truncated,
+          'sky-text--line-clamp': this['line-clamp'] != null,
         })}"
+        style=${styleMap({
+          '-webkit-line-clamp': this['line-clamp'],
+        })}
       >
         <slot></slot>
       </span>
@@ -63,6 +79,20 @@ export class SkyText extends LitElement {
 
     .sky-text--small {
       font-size: 12px;
+    }
+
+    .sky-text--ellipsis {
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .sky-text--line-clamp {
+      display: -webkit-inline-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   `
 }
