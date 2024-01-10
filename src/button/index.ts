@@ -82,6 +82,7 @@ export class SkyButton extends LitElement {
 
   static styles = css`
     :host {
+      --sky-button-font-size: 14px;
       --sky-button-text-color: #606266;
       --sky-button-bg-color: #ffffff;
       --sky-button-border-color: #dcdfe6;
@@ -105,7 +106,7 @@ export class SkyButton extends LitElement {
       padding: 0 1em;
       color: var(--sky-button-text-color);
       font-weight: 500;
-      font-size: 14px;
+      font-size: var(--sky-button-font-size);
       line-height: 1;
       white-space: nowrap;
       text-align: center;
@@ -346,11 +347,11 @@ export class SkyButton extends LitElement {
     }
 
     .sky-button.sky-button--large {
-      font-size: 16px;
+      --sky-button-font-size: 16px;
     }
 
     .sky-button.sky-button--small {
-      font-size: 12px;
+      --sky-button-font-size: 12px;
     }
 
     .sky-button.sky-button--block {

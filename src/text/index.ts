@@ -45,11 +45,12 @@ export class SkyText extends LitElement {
 
   static styles = css`
     :host {
+      --sky-text-font-size: 14px;
       --sky-text-text-color: #606266;
     }
 
     .sky-text {
-      font-size: 14px;
+      font-size: var(--sky-text-font-size);
       color: var(--sky-text-text-color);
     }
 
@@ -74,11 +75,11 @@ export class SkyText extends LitElement {
     }
 
     .sky-text--large {
-      font-size: 16px;
+      --sky-text-font-size: 16px;
     }
 
     .sky-text--small {
-      font-size: 12px;
+      --sky-text-font-size: 12px;
     }
 
     .sky-text--ellipsis {

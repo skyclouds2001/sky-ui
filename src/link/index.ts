@@ -68,6 +68,7 @@ export class SkyLink extends LitElement {
 
   static styles = css`
     :host {
+      --sky-text-font-size: 14px;
       --sky-link-text-color: #606266;
       --sky-link-hover-text-color: #409eff;
       --sky-link-disabled-text-color: #a8abb2;
@@ -81,7 +82,7 @@ export class SkyLink extends LitElement {
       outline: none;
       text-decoration: none;
       cursor: pointer;
-      font-size: 14px;
+      font-size: var(--sky-text-font-size);
       color: var(--sky-link-text-color);
     }
 
@@ -141,11 +142,11 @@ export class SkyLink extends LitElement {
     }
 
     .sky-link--large {
-      font-size: 16px;
+      --sky-text-font-size: 16px;
     }
 
     .sky-link--small {
-      font-size: 12px;
+      --sky-text-font-size: 12px;
     }
   `
 }
