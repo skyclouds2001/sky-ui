@@ -36,6 +36,10 @@ export default defineConfig({
             link: '/component/icon/',
           },
           {
+            text: 'Scrollbar',
+            link: '/component/scrollbar/',
+          },
+          {
             text: 'Image',
             link: '/component/image/',
           },
