@@ -4,6 +4,8 @@
 
 # Divider
 
+[[toc]]
+
 ## Basic usage
 
 <div>

@@ -4,6 +4,8 @@
 
 # Icon
 
+[[toc]]
+
 ## Basic usage
 
 <sky-icon>

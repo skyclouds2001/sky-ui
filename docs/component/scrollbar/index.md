@@ -4,6 +4,8 @@
 
 # Scrollbar
 
+[[toc]]
+
 ## Basic usage
 
 <div style="height: 100px;">

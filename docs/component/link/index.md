@@ -4,6 +4,8 @@
 
 # Link
 
+[[toc]]
+
 ## Basic usage
 
 <div>

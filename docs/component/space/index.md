@@ -4,6 +4,8 @@
 
 # Space
 
+[[toc]]
+
 ## Basic usage
 
 <div>

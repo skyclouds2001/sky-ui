@@ -4,6 +4,8 @@
 
 # Text
 
+[[toc]]
+
 ## Basic usage
 
 <div>

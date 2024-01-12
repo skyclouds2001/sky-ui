@@ -4,6 +4,8 @@
 
 # Image
 
+[[toc]]
+
 ## Basic usage
 
 <div>

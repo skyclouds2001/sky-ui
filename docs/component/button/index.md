@@ -4,6 +4,8 @@
 
 # Button
 
+[[toc]]
+
 ## Basic usage
 
 <div>
