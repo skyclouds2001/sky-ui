@@ -32,6 +32,10 @@ export default defineConfig({
             link: '/component/space/',
           },
           {
+            text: 'Container',
+            link: '/component/container/',
+          },
+          {
             text: 'Icon',
             link: '/component/icon/',
           },
