@@ -1,8 +1,8 @@
-# Space
-
 <script setup>
   import './../../../src/space'
 </script>
+
+# Space
 
 ## Basic usage
 

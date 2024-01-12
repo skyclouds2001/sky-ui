@@ -1,8 +1,8 @@
-# Image
-
 <script setup>
   import './../../../src/image'
 </script>
+
+# Image
 
 ## Basic usage
 

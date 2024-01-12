@@ -1,8 +1,8 @@
-# Link
-
 <script setup>
   import './../../../src/link'
 </script>
+
+# Link
 
 ## Basic usage
 

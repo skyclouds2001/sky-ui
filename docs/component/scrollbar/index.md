@@ -1,8 +1,8 @@
-# Scrollbar
-
 <script setup>
   import './../../../src/scrollbar'
 </script>
+
+# Scrollbar
 
 ## Basic usage
 

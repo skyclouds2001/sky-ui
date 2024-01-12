@@ -1,8 +1,8 @@
-# Icon
-
 <script setup>
   import './../../../src/icon'
 </script>
+
+# Icon
 
 ## Basic usage
 

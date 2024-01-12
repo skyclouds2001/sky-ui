@@ -1,8 +1,8 @@
-# Button
-
 <script setup>
   import './../../../src/button'
 </script>
+
+# Button
 
 ## Basic usage
 

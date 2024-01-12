@@ -1,8 +1,8 @@
-# Text
-
 <script setup>
   import './../../../src/text'
 </script>
+
+# Text
 
 ## Basic usage
 

@@ -1,8 +1,8 @@
-# Divider
-
 <script setup>
   import './../../../src/divider'
 </script>
+
+# Divider
 
 ## Basic usage
 
