@@ -1,19 +1,28 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 @customElement('sky-container')
 export class SkyContainer extends LitElement {
   protected render() {
     return html`
-      <div class="sky-container">
+      <section
+        class="sky-container"
+        style=${styleMap({
+          'flex-direction': Array.from(this.childNodes).some((v) => v.nodeName === 'SKY-ASIDE') ? 'row' : 'column',
+        })}
+      >
         <slot></slot>
-      </div>
+      </section>
     `
   }
 
   static styles = css`
     .sky-container {
-      //
+      display: flex;
+      flex: 1;
+      flex-basis: auto;
+      box-sizing: border-box;
     }
   `
 }
@@ -22,15 +31,20 @@ export class SkyContainer extends LitElement {
 export class SkyMain extends LitElement {
   protected render() {
     return html`
-      <div class="sky-main">
+      <main class="sky-main">
         <slot></slot>
-      </div>
+      </main>
     `
   }
 
   static styles = css`
     .sky-main {
-      //
+      display: block;
+      padding: 20px;
+      flex: 1;
+      flex-basis: auto;
+      box-sizing: border-box;
+      overflow: auto;
     }
   `
 }
@@ -39,15 +53,18 @@ export class SkyMain extends LitElement {
 export class SkyHeader extends LitElement {
   protected render() {
     return html`
-      <div class="sky-header">
+      <header class="sky-header">
         <slot></slot>
-      </div>
+      </header>
     `
   }
 
   static styles = css`
     .sky-header {
-      //
+      height: 60px;
+      padding: 0 20px;
+      flex-shrink: 0;
+      box-sizing: border-box;
     }
   `
 }
@@ -56,15 +73,18 @@ export class SkyHeader extends LitElement {
 export class SkyFooter extends LitElement {
   protected render() {
     return html`
-      <div class="sky-footer">
+      <footer class="sky-footer">
         <slot></slot>
-      </div>
+      </footer>
     `
   }
 
   static styles = css`
     .sky-footer {
-      //
+      height: 60px;
+      padding: 0 20px;
+      flex-shrink: 0;
+      box-sizing: border-box;
     }
   `
 }
@@ -73,15 +93,20 @@ export class SkyFooter extends LitElement {
 export class SkyAside extends LitElement {
   protected render() {
     return html`
-      <div class="sky-aside">
+      <aside class="sky-aside">
         <slot></slot>
-      </div>
+      </aside>
     `
   }
 
   static styles = css`
     .sky-aside {
-      //
+      width: 200px;
+      height: 100%;
+      padding: 20px 0;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      overflow: auto;
     }
   `
 }
