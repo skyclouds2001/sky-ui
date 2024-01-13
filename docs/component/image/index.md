@@ -1,4 +1,5 @@
 <script setup>
+  import CodeBlock from './../CodeBlock.vue'
   import './../../../src/image'
 </script>
 
@@ -8,12 +9,12 @@
 
 ## Basic usage
 
-<div>
+<code-block>
   <sky-image src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
-</div>
+</code-block>
 
 ## Load error
 
-<div>
-  <sky-image src="error" />
-</div>
+<code-block>
+  <sky-image src="" />
+</code-block>

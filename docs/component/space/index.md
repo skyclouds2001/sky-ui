@@ -1,4 +1,5 @@
 <script setup>
+  import CodeBlock from './../CodeBlock.vue'
   import './../../../src/space'
 </script>
 
@@ -8,20 +9,20 @@
 
 ## Basic usage
 
-<div>
+<code-block>
   <sky-space>
     <div style="width: 100px; height: 100px">space</div>
     <div style="width: 100px; height: 100px">space</div>
     <div style="width: 100px; height: 100px">space</div>
   </sky-space>
-</div>
+</code-block>
 
 ## Direction
 
-<div>
+<code-block>
   <sky-space direction="vertical">
     <div style="width: 100px; height: 100px">space</div>
     <div style="width: 100px; height: 100px">space</div>
     <div style="width: 100px; height: 100px">space</div>
   </sky-space>
-</div>
+</code-block>
