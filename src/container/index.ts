@@ -19,6 +19,8 @@ export class SkyContainer extends LitElement {
 
   static styles = css`
     .sky-container {
+      width: 100%;
+      height: 100%;
       display: flex;
       flex: 1;
       flex-basis: auto;
@@ -39,6 +41,8 @@ export class SkyMain extends LitElement {
 
   static styles = css`
     .sky-main {
+      width: 100%;
+      height: 100%;
       display: block;
       padding: 20px;
       flex: 1;
@@ -61,6 +65,7 @@ export class SkyHeader extends LitElement {
 
   static styles = css`
     .sky-header {
+      width: 100%;
       height: 60px;
       padding: 0 20px;
       flex-shrink: 0;
@@ -81,6 +86,7 @@ export class SkyFooter extends LitElement {
 
   static styles = css`
     .sky-footer {
+      width: 100%;
       height: 60px;
       padding: 0 20px;
       flex-shrink: 0;

@@ -34,7 +34,7 @@
 </script>
 
 <style>
-  sky-container, sky-main {
+  sky-container, sky-main, sky-header, sky-footer {
     width: 100%;
   }
 </style>
