@@ -1,15 +1,20 @@
 import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 @customElement('sky-container')
 export class SkyContainer extends LitElement {
+  @property({
+    type: String,
+  })
+  direction?: 'row' | 'column'
+
   protected render() {
     return html`
       <section
         class="sky-container"
         style=${styleMap({
-          'flex-direction': Array.from(this.childNodes).some((v) => v.nodeName === 'SKY-ASIDE') ? 'row' : 'column',
+          'flex-direction': this.direction ?? (Array.from(this.childNodes).some((v) => v.nodeName === 'SKY-ASIDE') ? 'row' : 'column'),
         })}
       >
         <slot></slot>
@@ -55,9 +60,14 @@ export class SkyMain extends LitElement {
 
 @customElement('sky-header')
 export class SkyHeader extends LitElement {
+  @property({
+    type: Number,
+  })
+  height: number = 60
+
   protected render() {
     return html`
-      <header class="sky-header">
+      <header class="sky-header" style="--sky-header-height: ${`${this.height}px`}">
         <slot></slot>
       </header>
     `
@@ -66,7 +76,7 @@ export class SkyHeader extends LitElement {
   static styles = css`
     .sky-header {
       width: 100%;
-      height: 60px;
+      height: var(--sky-header-height);
       padding: 0 20px;
       flex-shrink: 0;
       box-sizing: border-box;
@@ -76,9 +86,14 @@ export class SkyHeader extends LitElement {
 
 @customElement('sky-footer')
 export class SkyFooter extends LitElement {
+  @property({
+    type: Number,
+  })
+  height: number = 60
+
   protected render() {
     return html`
-      <footer class="sky-footer">
+      <footer class="sky-footer" style="--sky-footer-height: ${`${this.height}px`}">
         <slot></slot>
       </footer>
     `
@@ -87,7 +102,7 @@ export class SkyFooter extends LitElement {
   static styles = css`
     .sky-footer {
       width: 100%;
-      height: 60px;
+      height: var(--sky-footer-height);
       padding: 0 20px;
       flex-shrink: 0;
       box-sizing: border-box;
@@ -97,17 +112,28 @@ export class SkyFooter extends LitElement {
 
 @customElement('sky-aside')
 export class SkyAside extends LitElement {
+  @property({
+    type: Number,
+  })
+  width: number = 200
+
   protected render() {
     return html`
-      <aside class="sky-aside">
+      <aside class="sky-aside" style="--sky-aside-width: ${`${this.width}px`}">
         <slot></slot>
       </aside>
     `
   }
 
   static styles = css`
+    @property --sky-aside-width {
+      syntax: '<length>';
+      inherits: true;
+      initial-value: 200px;
+    }
+
     .sky-aside {
-      width: 200px;
+      width: var(--sky-aside-width);
       height: 100%;
       padding: 20px 0;
       flex-shrink: 0;
