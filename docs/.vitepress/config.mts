@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import components from './../pages.json'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -21,44 +22,7 @@ export default defineConfig({
     sidebar: [
       {
         text: 'Component',
-        items: [
-          {
-            text: 'Button',
-            link: '/component/button/',
-          },
-          {
-            text: 'Link',
-            link: '/component/link/',
-          },
-          {
-            text: 'Text',
-            link: '/component/text/',
-          },
-          {
-            text: 'Space',
-            link: '/component/space/',
-          },
-          {
-            text: 'Container',
-            link: '/component/container/',
-          },
-          {
-            text: 'Icon',
-            link: '/component/icon/',
-          },
-          {
-            text: 'Scrollbar',
-            link: '/component/scrollbar/',
-          },
-          {
-            text: 'Image',
-            link: '/component/image/',
-          },
-          {
-            text: 'Divider',
-            link: '/component/divider/',
-          },
-        ],
+        items: components,
       },
     ],
 
