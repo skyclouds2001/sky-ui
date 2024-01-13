@@ -128,6 +128,13 @@ export class SkyLink extends LitElement {
       border-bottom: 1px solid var(--sky-link-hover-text-color);
     }
 
+    .sky-link {
+      --sky-text-font-size: 14px;
+      --sky-link-text-color: #606266;
+      --sky-link-hover-text-color: #409eff;
+      --sky-link-disabled-text-color: #a8abb2;
+    }
+
     .sky-link--primary {
       --sky-link-text-color: #409eff;
       --sky-link-hover-text-color: #79bbff;

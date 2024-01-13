@@ -211,6 +211,24 @@ export class SkyButton extends LitElement {
       outline-offset: 1px;
     }
 
+    .sky-button {
+      --sky-button-font-size: 14px;
+      --sky-button-text-color: #606266;
+      --sky-button-bg-color: #ffffff;
+      --sky-button-border-color: #dcdfe6;
+      --sky-button-active-text-color: #409eff;
+      --sky-button-active-bg-color: #ecf5ff;
+      --sky-button-active-border-color: #409eff;
+      --sky-button-hover-text-color: #409eff;
+      --sky-button-hover-bg-color: #ecf5ff;
+      --sky-button-hover-border-color: #c6e2ff;
+      --sky-button-outline-color: #a0cfff;
+      --sky-button-disabled-text-color: #a8abb2;
+      --sky-button-disabled-bg-color: #ffffff;
+      --sky-button-disabled-border-color: #e4e7ed;
+      --sky-button-hover-link-text-color: #909399;
+    }
+
     .sky-button--primary {
       --sky-button-text-color: #ffffff;
       --sky-button-bg-color: #409eff;

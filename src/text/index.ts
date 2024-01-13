@@ -61,6 +61,11 @@ export class SkyText extends LitElement {
       color: var(--sky-text-text-color);
     }
 
+    .sky-text {
+      --sky-text-font-size: 14px;
+      --sky-text-text-color: #606266;
+    }
+
     .sky-text--primary {
       --sky-text-text-color: #409eff;
     }
