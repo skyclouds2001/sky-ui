@@ -5,7 +5,7 @@ defineOptions({
 </script>
 
 <template>
-  <div :class="$style.container">
+  <div class="code-block" :class="$style.container">
     <div :class="$style.box">
       <slot></slot>
     </div>
