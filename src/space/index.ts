@@ -20,6 +20,21 @@ export class SkySpace extends LitElement {
   })
   size: number = 12
 
+  @property({
+    type: String,
+  })
+  alignment: string = 'center'
+
+  @property({
+    type: Boolean,
+  })
+  fill: boolean = false
+
+  @property({
+    type: Number,
+  })
+  'fill-ratio': number = 100
+
   protected render() {
     const ids = Array(this.children.length)
       .fill(0)
@@ -33,13 +48,20 @@ export class SkySpace extends LitElement {
         style=${styleMap({
           'flex-wrap': this.wrap ? 'wrap' : 'nowrap',
           gap: `${this.size}px`,
+          'align-items': this.alignment,
         })}
       >
         ${repeat(
           ids,
           (id) => id,
           (id) => html`
-            <div class="sky-space--item">
+            <div
+              class="sky-space--item"
+              style=${styleMap({
+                'flex-grow': this.fill ? 1 : 0,
+                'min-width': this.fill ? `${this['fill-ratio']}%` : 'auto',
+              })}
+            >
               <slot name=${id}></slot>
             </div>
           `
