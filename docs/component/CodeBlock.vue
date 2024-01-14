@@ -1,12 +1,17 @@
-<script setup>
+<script setup lang="ts">
 defineOptions({
   name: 'CodeBlock',
 })
+
+const props = defineProps<{
+  width?: string
+  height?: string
+}>()
 </script>
 
 <template>
   <div class="code-block" :class="$style.container">
-    <div :class="$style.box">
+    <div :class="$style.box" :style="props">
       <slot></slot>
     </div>
   </div>
