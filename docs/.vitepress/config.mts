@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress'
-import components from './../pages.json'
+import config from './../component/pages.data'
+
+const components = await config.load([])
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
