@@ -15,10 +15,10 @@ hero:
       link: https://github.com/skyclouds2001/sky-ui
 
 features:
-  - title: 6
-    details: 6
-  - title: 666
-    details: 666
-  - title: 66666
-    details: 66666
+  - title: '6'
+    details: '6'
+  - title: '666'
+    details: '666'
+  - title: '66666'
+    details: '66666'
 ---
