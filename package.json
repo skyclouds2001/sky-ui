@@ -13,6 +13,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
   "browser": "./dist/index.umd.js",
