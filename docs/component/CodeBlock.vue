@@ -21,12 +21,14 @@ const props = defineProps<{
 .container {
   border-radius: 5px;
   box-sizing: border-box;
+  display: block;
   margin: 10px 0;
   padding: 0;
 }
 
 .box {
   box-sizing: border-box;
+  display: block;
   margin: 0;
   padding: 1rem;
 }
