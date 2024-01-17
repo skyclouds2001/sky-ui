@@ -1,11 +1,19 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 @customElement('sky-row')
 export class SkyRow extends LitElement {
+  @property({
+    type: Number,
+  })
+  gutter: number = 0
+
   protected render() {
     return html`
-      <div class="sky-row">
+      <div class="sky-row" style=${styleMap({
+        gap: `${this.gutter}px`,
+      })}>
         <slot></slot>
       </div>
     `
@@ -32,10 +40,21 @@ export class SkyCol extends LitElement {
   span: number = 24
 
   protected render() {
+    const gutter = Number.parseInt(this.parentElement?.getAttribute('gutter') ?? '0')
+
     return html`
       <style>
         :host {
-          width: ${(this.span * 100) / 24}%;
+          width: calc(${this.span / 24 * 100}% - ${gutter}px);
+          flex: 0 0 calc(${this.span / 24 * 100}% - ${gutter}px);
+        }
+
+        :host(:first-child) {
+          margin-left: ${gutter / 2}px !important;
+        }
+
+        :host(:last-child) {
+          margin-right: ${gutter / 2}px !important;
         }
       </style>
       <div class="sky-col">
