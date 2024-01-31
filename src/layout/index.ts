@@ -11,9 +11,12 @@ export class SkyRow extends LitElement {
 
   protected render() {
     return html`
-      <div class="sky-row" style=${styleMap({
-        gap: `${this.gutter}px`,
-      })}>
+      <div
+        class="sky-row"
+        style=${styleMap({
+          gap: `${this.gutter}px`,
+        })}
+      >
         <slot></slot>
       </div>
     `
@@ -28,6 +31,7 @@ export class SkyRow extends LitElement {
       display: flex;
       flex-wrap: wrap;
       box-sizing: border-box;
+      position: relative;
     }
   `
 }
@@ -39,14 +43,21 @@ export class SkyCol extends LitElement {
   })
   span: number = 24
 
+  @property({
+    type: Number,
+  })
+  offset: number = 0
+
   protected render() {
     const gutter = Number.parseInt(this.parentElement?.getAttribute('gutter') ?? '0')
 
     return html`
       <style>
         :host {
-          width: calc(${this.span / 24 * 100}% - ${gutter}px);
-          flex: 0 0 calc(${this.span / 24 * 100}% - ${gutter}px);
+          width: calc(${(this.span / 24) * 100}% - ${gutter}px);
+          flex: 0 0 calc(${(this.span / 24) * 100}% - ${gutter}px);
+          position: relative;
+          left: ${(this.offset / 24) * 100}%;
         }
 
         :host(:first-child) {
