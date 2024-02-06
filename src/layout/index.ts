@@ -9,12 +9,24 @@ export class SkyRow extends LitElement {
   })
   gutter: number = 0
 
+  @property({
+    type: String,
+  })
+  justify?: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly'
+
+  @property({
+    type: String,
+  })
+  align?: 'top' | 'middle' | 'bottom'
+
   protected render() {
     return html`
       <div
         class="sky-row"
         style=${styleMap({
           gap: `${this.gutter}px`,
+          'justify-content': this.justify,
+          'align-items': this.align,
         })}
       >
         <slot></slot>
