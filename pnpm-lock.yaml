@@ -1491,7 +1491,7 @@ packages:
       '@vue/shared': 3.4.6
       estree-walker: 2.0.2
       magic-string: 0.30.5
-      postcss: 8.4.33
+      postcss: 8.4.38
       source-map-js: 1.0.2
     dev: true
 
@@ -4516,13 +4516,13 @@ packages:
     hasBin: true
     dev: true
 
-  /postcss@8.4.33:
-    resolution: {integrity: sha512-Kkpbhhdjw2qQs2O2DGX+8m5OVqEcbB9HRBvuYM9pgrjEFUg30A9LmXNlTAUj4S9kgtGyrMbTzVjH7E+s5Re2yg==}
+  /postcss@8.4.38:
+    resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.0
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
     dev: true
 
   /preact@10.19.3:
@@ -4958,6 +4958,11 @@ packages:
 
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /source-map-js@1.2.0:
+    resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -5428,7 +5433,7 @@ packages:
     dependencies:
       '@types/node': 20.10.1
       esbuild: 0.19.8
-      postcss: 8.4.33
+      postcss: 8.4.38
       rollup: 4.6.1
     optionalDependencies:
       fsevents: 2.3.3
@@ -5464,7 +5469,7 @@ packages:
     dependencies:
       '@types/node': 20.10.1
       esbuild: 0.19.8
-      postcss: 8.4.33
+      postcss: 8.4.38
       rollup: 4.6.1
     optionalDependencies:
       fsevents: 2.3.3
